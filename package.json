@@ -1,0 +1,32 @@
+{
+  "name": "react-component-library",
+  "version": "1.0.0",
+  "description": "react component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "author": "Assadullah Hassan",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "minireset.css": "^0.0.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-a11y": "^10.5.9",
+    "@storybook/addon-docs": "^10.5.9",
+    "@storybook/addon-vitest": "^10.5.9",
+    "@storybook/react-vite": "^10.5.9",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest",
+    "prop-types": "^15.8.1",
+    "storybook": "^10.5.9",
+    "vitest": "latest"
+  }
+}
