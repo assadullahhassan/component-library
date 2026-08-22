@@ -3,15 +3,40 @@ import { options } from "./constants"
 
 export default {
     title: "Card",
-    component: Card
+    component: Card,
+    args: {
+        children: 'i am component by default'
+    },
+    argTypes: {
+        color: {
+            description: "**The color of the card**",
+            table: {
+                type: {
+                    summary: options.colors.map(option => `'${option}'`).join("|")
+                },
+            },
+            control: { type: 'select', options: options.colors },
+        },
+        size: {
+            description: "**The size of the card**",
+            table: {
+                type: {
+                    summary: options.sizes.map(option => `'${option}'`).join("|")
+                },
+            },
+            control: { type: 'select', options: options.sizes },
+        },
+       
+    }   
+
 }
 
 const Template = (args) => <Card {...args} />
 
-const TemplateList = ({items, ...args}) => 
-    items.map((item, index) => {
+const ListTemplate = ({items, ...args}) => 
+    items.map((item, index) => 
         <Card key={index} {...args} {...item} />
-    }) 
+    ) 
 
 export const Default = Template.bind({})
 
@@ -27,13 +52,14 @@ Dragable.args = {
     isDragable: true
 }
 
-export const Colors = TemplateList.bind({});
+export const Colors = ListTemplate.bind({});
 
 Colors.args = {
     items: options.colors.map((color) => ({ color })),
 }
 
-export const Sizes = () => 
-    options.sizes.map((size, index) => {
-        return <Card key={index} size={size} />;
-    })
+export const Sizes = ListTemplate.bind({});
+
+Sizes.args = {
+    items: options.sizes.map((size) => ({ size })),
+}
