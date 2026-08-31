@@ -26,10 +26,12 @@ Rounded.args = {
 
 export const Height = Template.bind({})
 Height.args = {
-    height: 400
+    height: 400,
+    src: "https://placehold.co/400x800",
 }
 
 export const Width = Template.bind({})
 Width.args = {
-    width: 400
+    width: 400,
+    src: "https://placehold.co/800x400",
 }
